@@ -8,6 +8,7 @@ import one.digitalinnovation.personapi.exception.PresonNotFoundException;
 import one.digitalinnovation.personapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 public class PersonService {
 
-    private PersonRepository personRepository;
+    private static PersonRepository personRepository;
 
     private final PersonMapper personMapper = PersonMapper.INSTANCE;
 
@@ -46,13 +47,22 @@ public class PersonService {
     }
 
     public PersonDTO findById(Long id) throws PresonNotFoundException {
-        Person person = personRepository.findById(id)
-                .orElseThrow(() -> new PresonNotFoundException(id));
+        Person person = verifyIfExists(id);
+
         return personMapper.toDTO(person);
-//        Optional<Person> optionalPerson = personRepository.findById(id);
-//        if (optionalPerson.isEmpty()){
-//            throw new PresonNotFoundException(id);
-//        }
-//        return personMapper.toDTO((optionalPerson.get()));
     }
+
+    public static void delete(Long id) throws PresonNotFoundException {
+        personRepository.findById(id)
+                .orElseThrow(() -> new PresonNotFoundException(id));
+
+        personRepository.deleteById(id);
+
+    }
+
+    private Person verifyIfExists(Long id) throws PresonNotFoundException {
+        return personRepository.findById(id)
+                .orElseThrow(() -> new PresonNotFoundException(id));
+    }
+
 }
