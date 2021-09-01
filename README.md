@@ -1,4 +1,4 @@
-istema para o gerenciamento de pessoas de uma empresa através de uma API REST, criada com o Spring Boot.
+Sistema para o gerenciamento de pessoas de uma empresa através de uma API REST, criada com o Spring Boot.
 
 Durante a sessão, serão desenvolvidos e abordados os seguintes tópicos:
 
