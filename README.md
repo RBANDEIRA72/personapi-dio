@@ -1,4 +1,6 @@
-Sistema para o gerenciamento de pessoas de uma empresa através de uma API REST, criada com o Spring Boot.
+## <u>Sistema para o gerenciamento de pessoas de uma empresa através de uma API REST, criada com o Spring Boot.</u>
+
+
 
 Durante a sessão, serão desenvolvidos e abordados os seguintes tópicos:
 
@@ -17,9 +19,54 @@ mvn spring-boot:run
 
 Após executar o comando acima, basta apenas abrir o seguinte endereço e visualizar a execução do projeto:
 
+#### Local
+
 ```
 http://localhost:8080/api/v1/people
 ```
+
+#### Heroku
+
+```
+https://peopleapi---dio.herokuapp.com//api/v1/people
+```
+
+
+
+Comandos para utilização da API:
+
+
+
+###### Incluir Pessoas:
+
+```
+Comando POST  ==>  /api/v1/people
+```
+
+###### Listar todas as Pessoas:
+
+```
+Comando GET  ==>  /api/v1/people
+```
+
+###### Listar Pessoa por ID:
+
+```
+Comando GET  ==>  /api/v1/people/"/{id}"
+```
+
+###### Atualizar Pessoa:
+
+```
+Comando PUT  ==>  /api/v1/people/"/{id}"
+```
+
+###### Deletar Pessoa:
+
+```
+Comando DELETE  ==>  /api/v1/people/"/{id}"
+```
+
 
 
 São necessários os seguintes pré-requisitos para a execução do projeto desenvolvido durante a aula:
@@ -46,7 +93,7 @@ Abaixo, seguem links bem bacanas, sobre tópicos mencionados durante a aula:
 * [Documentação oficial do Map Struct](https://mapstruct.org/)
 * [Referência para o padrão arquitetural REST](https://restfulapi.net/)
 
-[Neste link](https://drive.google.com/file/d/1crVPOVl6ok2HeYjh3fjQuGQn2lDZVHrn/view?usp=sharing), seguem os slides apresentados como o roteiro utilizado para o desenvolvimento do projeto da nossa sessão.
+
 
 
 
